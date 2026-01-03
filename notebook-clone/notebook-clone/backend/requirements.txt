@@ -1,8 +1,10 @@
 fastapi
 uvicorn
-python-multipart
-supabase
-llama-parse
-openai
 python-dotenv
-tiktoken
+llama-parse
+llama-index-core
+supabase
+groq
+# ... other items ...
+nest_asyncio
+fastembed  <-- MAKE SURE THIS IS HERE!
