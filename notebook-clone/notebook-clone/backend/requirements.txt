@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+python-multipart
+supabase
+llama-parse
+openai
+python-dotenv
+tiktoken
