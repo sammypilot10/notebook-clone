@@ -10,15 +10,12 @@ from app import quiz
 
 app = FastAPI()
 
-# 1. CORS Configuration
-# 1. CORS Configuration
+# 1. CORS Configuration - Updated for Vercel Production
 origins = [
     "http://localhost:3000",
     "https://notebook-clone-ten.vercel.app",  # Your specific Vercel URL
     "https://notebook-clone.vercel.app",      # Default Vercel project URL
 ]
-
-
 
 app.add_middleware(
     CORSMiddleware,
@@ -41,6 +38,7 @@ class ChatRequest(BaseModel):
 
 @app.post("/chat")
 async def chat_endpoint(request: ChatRequest):
+    # This handles the AI response logic
     return await chat.get_answer(request.question, request.history, request.doc_id)
 
 # 3. Upload Endpoint
@@ -57,3 +55,5 @@ class QuizRequest(BaseModel):
 @app.post("/generate_quiz")
 async def quiz_endpoint(request: QuizRequest):
     return await quiz.generate_quiz(request.doc_id, request.num_questions, request.difficulty)
+
+# Build Version: 1.0.1 (Adding this comment forces Git to see a change)
