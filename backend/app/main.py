@@ -11,11 +11,14 @@ from app import quiz
 app = FastAPI()
 
 # 1. CORS Configuration
+# 1. CORS Configuration
 origins = [
     "http://localhost:3000",
-    "https://notebook-clone.vercel.app", # Your Vercel URL
-    "*" # Temporary fallback
+    "https://notebook-clone-ten.vercel.app",  # Your specific Vercel URL
+    "https://notebook-clone.vercel.app",      # Default Vercel project URL
 ]
+
+
 
 app.add_middleware(
     CORSMiddleware,
